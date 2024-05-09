@@ -1,0 +1,32 @@
+<br>
+
+<div style="text-align: center;">
+  <%= image_tag 'logo.png', class: 'logo', style: 'width: 150px; height: auto;' %>
+</div>
+
+<div style="max-width: 400px; margin: 0 auto; padding: 20px; background-color: #fff; color: #000; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+  <h2 style="text-align: center; color: #000;">Welcome to your Inventory Tracker!</h2>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field" style="margin-bottom: 15px;">
+      <%= f.label :email, style: "color: #000;" %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", style: "width: 100%; padding: 8px; font-size: 16px;" %>
+    </div>
+
+    <div class="field" style="margin-bottom: 15px;">
+      <%= f.label :password, style: "color: #000;" %><br />
+      <%= f.password_field :password, autocomplete: "current-password", style: "width: 100%; padding: 8px; font-size: 16px;" %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field" style="margin-bottom: 15px;">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me, style: "color: #000;" %>
+      </div>
+    <% end %>
+
+    <div class="actions" style="text-align: center;">
+      <%= f.submit "Log in", style: "padding: 10px 20px; font-size: 16px; background-color: #fff; color: #000; border: 1px solid #000; border-radius: 5px; cursor: pointer; transition: background-color 0.3s, color 0.3s, border-color 0.3s;" %>
+    </div>
+  <% end %>
+</div>

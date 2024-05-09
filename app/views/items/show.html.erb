@@ -1,0 +1,29 @@
+<br>
+<br>
+
+<style>
+    /* CSS for item details */
+    .item-details {
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .item-details h1 {
+        margin-bottom: 10px;
+    }
+
+    .item-details p {
+        margin-bottom: 5px;
+    }
+</style>
+
+<div class="item-details">
+  <h1><%= @item.name %></h1>
+  <p>Quantity: <%= @item.quantity %></p>
+  <p>Manufacturer: <%= @item.manufacturers %> </p>
+</div>
+
+<%= link_to 'Go back', items_index_path, class: 'btn btn-black' %>
