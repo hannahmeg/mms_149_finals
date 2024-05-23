@@ -1,0 +1,16 @@
+{
+    "name": "Ruby on Rails",
+    "image": "mcr.microsoft.com/devcontainers/ruby:3.0-bullseye",
+    "features": {
+      "ghcr.io/devcontainers/features/node:1": {}
+    },
+    "postCreateCommand": "bundle install && yarn install",
+    "portsAttributes": {
+      "3000": {
+        "label": "Rails server",
+        "onAutoForward": "notify"
+      }
+    },
+    "forwardPorts": [3000]
+  }
+  
